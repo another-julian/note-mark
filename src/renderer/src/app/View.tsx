@@ -2,9 +2,8 @@ import { JSX } from 'react'
 
 export default function View(): JSX.Element {
   return (
-    <div>
-      <h1 className="text-amber-400">Welcome to the note mark</h1>
-      <p>This is a simple React application.</p>
+    <div className="flex h-full w-full items-center justify-center">
+      <span className="text-4xl text-blue-500">Hello from electron</span>
     </div>
   )
 }

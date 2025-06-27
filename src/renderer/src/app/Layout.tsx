@@ -1,19 +1,22 @@
 import { JSX, ReactNode } from 'react'
 
+import Content from '@app/ui/content'
+import Root from '@app/ui/root'
+import Sidenav from '@app/ui/sidenav'
+import DraggableTopBar from '@renderer/app/ui/draggable-top-bar'
+
 interface Props {
   children: ReactNode
 }
 
 export default function Layout({ children }: Props): JSX.Element {
   return (
-    <div className="flex h-full w-full flex-col">
-      <header>
-        <h1>Note Mark</h1>
-      </header>
-      <main className="flex h-full w-full">{children}</main>
-      <footer>
-        <p>&copy; 2023 Note Mark</p>
-      </footer>
-    </div>
+    <>
+      <DraggableTopBar />
+      <Root>
+        <Sidenav className="p-2" />
+        <Content className="border-l bg-zinc-900/50 border-l-white/20">{children}</Content>
+      </Root>
+    </>
   )
 }

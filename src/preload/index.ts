@@ -12,7 +12,7 @@ if (process.contextIsolated) {
     //contextBridge.exposeInMainWorld('electron', electronAPI)
     //contextBridge.exposeInMainWorld('api', api)
     contextBridge.exposeInMainWorld('context', {
-      //TODO
+      locale: navigator.language
     })
   } catch (error) {
     console.error(error)
